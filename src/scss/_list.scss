@@ -1,0 +1,9 @@
+.v-list {
+    &-item {
+        &--active {
+            &:before {
+                background: none !important;
+            }
+        }
+    }
+}

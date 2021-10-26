@@ -1,0 +1,17 @@
+[
+    {
+        "key": "1950-1960",
+        "icon": "mdi-music-note",
+        "path": "/dashboard"
+    },
+    {
+        "key": "1960-1970",
+        "icon": "mdi-music-note",
+        "path": "/dashboard"
+    },
+    {
+        "key": "Modern",
+        "icon": "mdi-music-note",
+        "path": "/dashboard"
+    }
+]

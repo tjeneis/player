@@ -1,0 +1,33 @@
+.v-card {
+    overflow: hidden !important;
+    position: relative;
+
+    &--highlight {
+        position: relative;
+        width: 100%;
+
+        &:hover {
+            .v-image__image:before {
+                opacity: 0.3 !important;
+            }
+        }
+        
+        .v-image__image:before {
+            background: rgba(31,29,44,0.5) !important;
+            opacity: 1 !important;
+            bottom: 0;
+            content: '';
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: opacity .1s !important;
+            z-index: 1 !important;
+        }
+    }
+}
+
+.v-card__title {
+    word-break: normal !important;
+    line-height: 1.75rem !important;
+}

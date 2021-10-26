@@ -4,7 +4,7 @@
 set -e
 
 # build
-npm run build
+yarn build --mode github
 
 # navigate into the build output directory
 cd dist
@@ -13,6 +13,6 @@ git init
 git add -A
 git commit -m 'deploy'
 
-git push -f git@github.com:thomasneis-weareyou/player.git main:gh-pages
+git subtree push --prefix dist main gh-pages
 
 cd -

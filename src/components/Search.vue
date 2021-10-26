@@ -16,13 +16,27 @@ export default {
 
 <style lang="scss" scoped>
   .v-input::v-deep {
-    .v-input__slot {
+    .v-application.theme--dark & {
+      .v-input__slot {
       background: rgba(255,255,255,0.05);
-      padding: 0 1rem !important;
 
-      .v-icon {
-        color: rgba(255,255,255,0.25);
+        .v-icon {
+          color: rgba(255,255,255,0.25);
+        }
       }
+    }
+    .v-application.theme--light & {
+      .v-input__slot {
+        background: rgba(0,0,0,0.05);
+
+        .v-icon {
+          color: rgba(0,0,0,0.5);
+        }
+      }
+    }
+
+    .v-input__slot {
+      padding: 0 1rem !important;
     }
   }
 </style>

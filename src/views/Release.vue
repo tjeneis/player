@@ -9,6 +9,7 @@
           color="rgba(255,255,255,0.05)"
           elevation="0"
           rounded
+          style="max-height: 960px;"
         >
           <div
             v-if="loading"

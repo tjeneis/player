@@ -48,11 +48,7 @@
             class="px-0"
             cols="auto"
           >
-            <v-btn
-              icon
-            >
-              <v-icon>mdi-cast</v-icon>
-            </v-btn>
+            <cast-modal />
           </v-col>
 
           <v-col
@@ -62,6 +58,7 @@
           >
             <v-btn
               icon
+              @click="$root.$emit('toggle-config')"
             >
               <v-icon>mdi-cog</v-icon>
             </v-btn>
@@ -88,9 +85,10 @@
     <v-navigation-drawer
       app
       class="transparent"
+      disable-resize-watcher
       :mini-variant.sync="mini"
       :mini-variant-width="74"
-      :value="$route.name !== 'Home'"
+      :value="$route.name !== 'Home' && $vuetify.breakpoint.mdAndUp"
     >
       <v-sheet
         color="default"
@@ -131,8 +129,8 @@
       clipped
       disable-resize-watcher
       right
-      :value="$route.name === 'Release'"
-      width="420"
+      :value="$route.name === 'Release' && $vuetify.breakpoint.mdAndUp"
+      width="30%"
     >
       <v-list class="py-0">
         <v-list-item>
@@ -146,14 +144,14 @@
           </v-list-item-content>
         </v-list-item>
         <template
-          v-for="(video, index) in videos"
+          v-for="(subject, index) in subjects.filter(x => x.enabled)"
         >
           <v-list-item
-            :key="video.id"
-            :to="`/release/${video.id}`"
+            :key="videos[index].id"
+            :to="`/release/${videos[index].id}`"
           >
             <v-list-item-content>
-              <v-list-item-title>{{ $t('Subject') }} {{ index + 1 }}</v-list-item-title>
+              <v-list-item-title>{{ $t('Subject') }} {{ subject.index }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </template>
@@ -168,6 +166,46 @@
       </div>
     </v-navigation-drawer>
 
+    <v-navigation-drawer
+      v-model="config"
+      absolute
+      color="default"
+      right
+      temporary
+    >
+      <div class="pa-4">
+        <v-list class="py-0">
+          <v-list-item>
+            <v-list-item-content class="ml-0">
+              <v-list-item-subtitle
+                class="text-uppercase"
+                style="font-size: 0.75rem; letter-spacing: 0.1rem;"
+              >
+                {{ $t('Subjects') }}
+              </v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+          <template
+            v-for="(subject, index) in subjects"
+          >
+            <v-list-item
+              :key="index"
+            >
+              <v-list-item-action>
+                <v-checkbox
+                  v-model="subject.enabled"
+                  color="primary"
+                />
+              </v-list-item-action>
+              <v-list-item-content>
+                <v-list-item-title>{{ $t('Subject') }} {{ subject.index }}</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </template>
+        </v-list>
+      </div>
+    </v-navigation-drawer>
+
     <v-main>
       <router-view :key="$route.fullPath" />
     </v-main>
@@ -175,6 +213,7 @@
 </template>
 
 <script>
+import CastModal from '@/components/CastModal.vue';
 import LocaleSwitch from '@/components/LocaleSwitch.vue';
 import Logo from '@/components/Logo.vue';
 import Navigation from '@/components/Navigation.vue';
@@ -187,6 +226,7 @@ import videos from '@/data/videos.json';
 
 export default {
   components: {
+    CastModal,
     LocaleSwitch,
     Logo,
     Navigation,
@@ -198,6 +238,7 @@ export default {
   data: (vm) => ({
     categories,
     mini: null,
+    config: false,
     navigation: [
       {
         key: vm.$i18n.t('Dashboard'),
@@ -215,7 +256,13 @@ export default {
         path: '/dashboard',
       },
     ],
+    subjects: new Array(6).fill().map((e, i) => ({ index: i + 1, enabled: true })),
     videos,
   }),
+  created() {
+    this.$root.$on('toggle-config', () => {
+      this.config = !this.config;
+    });
+  },
 };
 </script>

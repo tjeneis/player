@@ -1,14 +1,16 @@
 <template>
-  <v-container fluid>
-    <v-row justify="center">
+  <v-container class="d-flex fill-height">
+    <v-row
+      align="center"
+      class="fill-height"
+      justify="center"
+    >
       <v-col
         cols="12"
         md="6"
       >
         <login />
       </v-col>
-    </v-row>
-    <v-row justify="center">
       <v-col
         cols="12"
         md="6"

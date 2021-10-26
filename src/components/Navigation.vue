@@ -53,16 +53,24 @@ export default {
   .v-list-item {
     &:hover {
       .v-list-item__icon {
-        background-color: var(--v-primary-base);
+        background-color: var(--v-primary-base) !important;
+        .v-icon {
+          color: white;
+        }
       }
     }
 
     .v-list-item__icon {
-      background-color: rgba(255,255,255,0.05);
       border-radius: 10px;
       margin: 12px 0 !important;
       padding: 8px;
       transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+      .v-application.theme--light & {
+        background-color: rgba(0,0,0,0.05);
+      }
+      .v-application.theme--dark & {
+        background-color: rgba(255,255,255,0.05);
+      }
     }
 
     .v-list-item__content {

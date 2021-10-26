@@ -6,7 +6,7 @@
   "RequestInformation": "Vraag informatie aan",
   "Login": "Inloggen",
   "RememberMe": "Login onthouden",
-  "ForgotPasswordOrUsername": "Ik kan niet inloggen, help mij",
+  "ForgotPasswordOrUsername": "Wachtwoord vergeten",
   "HighlightedFor": "Uitgelicht voor {username}",
   "Categories": "Categorieën",
   "MostWatched": "Vaak bekeken",
@@ -21,5 +21,8 @@
   "Profile": "Profiel",
   "Help": "Help",
   "Menu": "Menu",
-  "RelatedVideos": "Gerelateerde releases"
+  "RelatedVideos": "Gerelateerde releases",
+  "Close": "Sluiten",
+  "CastChromeTab": "Een tabblad casten vanuit Chrome",
+  "HowToCast": "<ul><li>Klik rechtsboven op de drie stipjes.</li><li>Klik op 'Casten'.</li><li>Kies het Chromecast-apparaat waarop je de content wilt bekijken.</li><li>Als je klaar bent, klik je rechts van de adresbalk op 'Casten' en dan 'Casten stoppen'.</li></ul>"
 }

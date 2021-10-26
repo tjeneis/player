@@ -1,30 +1,6 @@
 @import "_card.scss";
 @import "_list.scss";
 
-@font-face {
-    font-family: Gilroy;
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(/fonts/gilroy-regular-webfont.woff2) format("woff2"),url(/fonts/gilroy-regular-webfont.woff) format("woff");
-}
-
-@font-face {
-    font-family: Gilroy;
-    font-style: normal;
-    font-weight: 500;
-    font-display: swap;
-    src: url(/fonts/gilroy-semibold-webfont.woff2) format("woff2"),url(/fonts/gilroy-semibold-webfont.woff) format("woff");
-}
-
-@font-face {
-    font-family: Gilroy;
-    font-style: normal;
-    font-weight: 900;
-    font-display: swap;
-    src: url(/fonts/gilroy-extrabold-webfont.woff2) format("woff2"),url(/fonts/gilroy-extrabold-webfont.woff) format("woff");
-}
-
 body {
     background: var(--v-default-base) !important;
 }

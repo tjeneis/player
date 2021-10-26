@@ -1,7 +1,7 @@
 <template>
   <v-card
     class="pa-8"
-    color="default lighten-1"
+    color="default"
     elevation="0"
   >
     <h2 class="mb-3">
@@ -31,13 +31,14 @@
     <v-row dense>
       <v-col
         cols="12"
-        md="auto"
+        md="6"
       >
         <v-btn
           block
           color="primary"
           depressed
           large
+          rounded
           to="/dashboard"
         >
           {{ $t('Login') }}
@@ -45,12 +46,14 @@
       </v-col>
       <v-col
         cols="12"
-        md="auto"
+        md="6"
       >
         <v-btn
+          block
           depressed
           large
           outlined
+          rounded
           text
         >
           {{ $t('ForgotPasswordOrUsername') }}

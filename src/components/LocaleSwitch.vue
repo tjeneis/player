@@ -22,7 +22,7 @@
         :key="locale"
         @click="setLocale(locale)"
       >
-        <v-list-item-title>{{ locale.toUpperCase() }}</v-list-item-title>
+        <v-list-item-title>{{ getLocale(locale) }}</v-list-item-title>
       </v-list-item>
     </v-list>
   </v-menu>
@@ -37,6 +37,15 @@ export default {
       this.$i18n.locale = locale;
       this.$vuetify.lang.current = locale;
       this.$moment.locale(locale);
+    },
+    getLocale(locale) {
+      switch (locale) {
+        default:
+        case 'nl':
+          return 'Nederlands';
+        case 'en':
+          return 'English';
+      }
     },
   },
 };

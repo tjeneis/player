@@ -6,7 +6,7 @@
   "RequestInformation": "Request information",
   "Login": "Login",
   "RememberMe": "Remember me",
-  "ForgotPasswordOrUsername": "I can't login, help me",
+  "ForgotPasswordOrUsername": "Forgot my password",
   "HighlightedFor": "Top picks for {username}",
   "Categories": "Categories",
   "MostWatched": "Most watched",
@@ -21,5 +21,8 @@
   "Profile": "Profile",
   "Help": "Help",
   "Menu": "Menu",
-  "RelatedVideos": "Related releases"
+  "RelatedVideos": "Related releases",
+  "Close": "Close",
+  "CastChromeTab": "Cast a tab from Chrome",
+  "HowToCast": "<ul><li>At the top right, click on the three dots.</li><li>Click on 'Cast'.</li><li>Choose the Chromecast device where you want to watch the content.</li><li>When you're done, to the right of the address bar, click 'Cast' and then 'Stop casting'.</li></ul>"
 }

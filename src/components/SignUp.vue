@@ -1,7 +1,7 @@
 <template>
   <v-card
     class="pa-8"
-    color="default lighten-2"
+    color="default lighten-1"
     elevation="0"
   >
     <h2 class="mb-3">
@@ -18,6 +18,7 @@
       color="primary"
       depressed
       large
+      rounded
     >
       {{ $t('RequestInformation') }}
     </v-btn>

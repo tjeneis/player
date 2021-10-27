@@ -15,13 +15,13 @@
         cols="12"
         md="8"
       >
-        <highlighted-video id="500518235" />
+        <highlighted-video id="75945841" />
       </v-col>
       <v-col
         cols="12"
         md="4"
       >
-        <highlighted-video id="637403296" />
+        <highlighted-video id="294465653" />
       </v-col>
     </v-row>
     <v-row class="mt-8">

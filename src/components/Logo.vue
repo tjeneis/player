@@ -9,7 +9,7 @@
       width="40"
       src="@/assets/logo.png"
     >
-    <span v-if="!mini">Player X</span>
+    <span v-if="!mini">OP||MAAT</span>
   </h3>
 </template>
 

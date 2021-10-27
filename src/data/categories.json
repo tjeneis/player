@@ -13,5 +13,25 @@
         "key": "Modern",
         "icon": "mdi-music-note",
         "path": "/dashboard"
+    },
+    {
+        "key": "Seizoenen",
+        "icon": "mdi-music-note",
+        "path": "/dashboard"
+    },
+    {
+        "key": "Klassiek",
+        "icon": "mdi-music-note",
+        "path": "/dashboard"
+    },
+    {
+        "key": "Filmmuziek",
+        "icon": "mdi-music-note",
+        "path": "/dashboard"
+    },
+    {
+        "key": "Nederlandstalig",
+        "icon": "mdi-music-note",
+        "path": "/dashboard"
     }
 ]

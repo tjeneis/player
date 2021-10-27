@@ -1,30 +1,40 @@
 <template>
   <v-list class="transparent py-0">
-    <v-list-item v-if="title && !mini">
-      <v-list-item-content class="ml-0">
-        <v-list-item-subtitle
-          class="text-uppercase"
-          style="font-size: 0.75rem; letter-spacing: 0.1rem;"
-        >
-          {{ title }}
-        </v-list-item-subtitle>
-      </v-list-item-content>
-    </v-list-item>
-    <v-list-item
-      v-for="item in items"
-      :key="item.key"
-      :to="item.path"
+    <v-list-group
+      :value="open"
     >
-      <v-list-item-icon>
-        <v-icon>{{ item.icon }}</v-icon>
-      </v-list-item-icon>
+      <template v-slot:activator>
+        <v-list-item
+          v-if="title && !mini"
+          class="pl-0"
+        >
+          <v-list-item-content class="ml-0">
+            <v-list-item-subtitle
+              class="text-uppercase"
+              style="font-size: 0.75rem; letter-spacing: 0.1rem;"
+            >
+              {{ title }}
+            </v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+      </template>
+      <v-list-item
+        v-for="item in items"
+        :key="item.key"
+        inactive
+        :to="item.path"
+      >
+        <v-list-item-icon>
+          <v-icon>{{ item.icon }}</v-icon>
+        </v-list-item-icon>
 
-      <v-list-item-content>
-        <v-list-item-title>
-          {{ item.key }}
-        </v-list-item-title>
-      </v-list-item-content>
-    </v-list-item>
+        <v-list-item-content>
+          <v-list-item-title>
+            {{ item.key }}
+          </v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+    </v-list-group>
   </v-list>
 </template>
 
@@ -44,6 +54,10 @@ export default {
     mini: {
       type: Boolean,
       default: undefined,
+    },
+    open: {
+      type: Boolean,
+      default: false,
     },
   },
 };

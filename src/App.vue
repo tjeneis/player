@@ -102,6 +102,7 @@
         :items="navigation"
         :title="$t('Menu')"
         :mini="mini"
+        :open="true"
       />
 
       <v-divider class="ma-4" />
@@ -130,7 +131,7 @@
       disable-resize-watcher
       right
       :value="$route.name === 'Release' && $vuetify.breakpoint.mdAndUp"
-      width="30%"
+      width="20%"
     >
       <v-list class="py-0">
         <v-list-item>
@@ -139,31 +140,31 @@
               class="text-uppercase"
               style="font-size: 0.75rem; letter-spacing: 0.1rem;"
             >
-              {{ $t('Subjects') }}
+              {{ $t('Parts') }}
             </v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
         <template
-          v-for="(subject, index) in subjects.filter(x => x.enabled)"
+          v-for="(part, index) in parts.filter(x => x.enabled)"
         >
           <v-list-item
             :key="videos[index].id"
             :to="`/release/${videos[index].id}`"
           >
             <v-list-item-content>
-              <v-list-item-title>{{ $t('Subject') }} {{ subject.index }}</v-list-item-title>
+              <v-list-item-title>{{ part.subject }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </template>
       </v-list>
 
-      <v-divider
+      <!-- <v-divider
         class="ma-4 mb-6"
       />
 
       <div class="px-4">
         <related-videos :key="$route.path" />
-      </div>
+      </div> -->
     </v-navigation-drawer>
 
     <v-navigation-drawer
@@ -181,24 +182,24 @@
                 class="text-uppercase"
                 style="font-size: 0.75rem; letter-spacing: 0.1rem;"
               >
-                {{ $t('Subjects') }}
+                {{ $t('Parts') }}
               </v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>
           <template
-            v-for="(subject, index) in subjects"
+            v-for="(part, index) in parts"
           >
             <v-list-item
               :key="index"
             >
               <v-list-item-action>
                 <v-checkbox
-                  v-model="subject.enabled"
+                  v-model="part.enabled"
                   color="primary"
                 />
               </v-list-item-action>
               <v-list-item-content>
-                <v-list-item-title>{{ $t('Subject') }} {{ subject.index }}</v-list-item-title>
+                <v-list-item-title>{{ part.subject }}</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
           </template>
@@ -217,11 +218,12 @@ import CastModal from '@/components/CastModal.vue';
 import LocaleSwitch from '@/components/LocaleSwitch.vue';
 import Logo from '@/components/Logo.vue';
 import Navigation from '@/components/Navigation.vue';
-import RelatedVideos from '@/components/RelatedVideos.vue';
+// import RelatedVideos from '@/components/RelatedVideos.vue';
 import Search from '@/components/Search.vue';
 import ThemeSwitch from '@/components/ThemeSwitch.vue';
 import User from '@/components/User.vue';
 import categories from '@/data/categories.json';
+import subjects from '@/data/subjects.json';
 import videos from '@/data/videos.json';
 
 export default {
@@ -230,7 +232,7 @@ export default {
     LocaleSwitch,
     Logo,
     Navigation,
-    RelatedVideos,
+    // RelatedVideos,
     Search,
     ThemeSwitch,
     User,
@@ -256,7 +258,7 @@ export default {
         path: '/dashboard',
       },
     ],
-    subjects: new Array(6).fill().map((e, i) => ({ index: i + 1, enabled: true })),
+    parts: new Array(6).fill().map((e, i) => ({ subject: subjects[i], enabled: true })),
     videos,
   }),
   created() {

@@ -24,7 +24,7 @@
             >
               <v-card
                 class="d-flex flex-column fill-height"
-                :color="$vuetify.theme.dark ? 'default lighten-1' : 'default'"
+                :color="$vuetify.theme.dark ? 'default lighten-1' : '#F4F4F4'"
                 :elevation="0"
                 :to="`/release/${video.id}`"
               >

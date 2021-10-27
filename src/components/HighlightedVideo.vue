@@ -8,7 +8,10 @@
       height="365"
       :src="`https://vumbnail.com/${video.id}.jpg`"
     >
-      <div style="padding: 1.5rem; display: flex; flex-direction: column; height: 100%; position: absolute; top: 0; left: 0;">
+      <div
+        class="white--text"
+        style="padding: 1.5rem; display: flex; flex-direction: column; height: 100%; position: absolute; top: 0; left: 0;"
+      >
         <h2 class="font-weight-medium">
           {{ video.title }}
         </h2>
